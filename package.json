@@ -1,0 +1,25 @@
+{
+  "name": "redux-resources",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zebulonj/redux-resources.git"
+  },
+  "keywords": [
+    "Redux",
+    "Entities",
+    "Remote",
+    "API"
+  ],
+  "author": "Zebulon Young (zebulonj@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zebulonj/redux-resources/issues"
+  },
+  "homepage": "https://github.com/zebulonj/redux-resources#readme"
+}
