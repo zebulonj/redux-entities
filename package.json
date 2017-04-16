@@ -1,5 +1,5 @@
 {
-  "name": "redux-resources",
+  "name": "@zebulonj/redux-resources",
   "version": "0.0.0",
   "description": "Abstracted support for managing persistent entities in Redux.",
   "main": "index.js",
