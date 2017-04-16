@@ -21,5 +21,15 @@
   "bugs": {
     "url": "https://github.com/zebulonj/redux-resources/issues"
   },
-  "homepage": "https://github.com/zebulonj/redux-resources#readme"
+  "homepage": "https://github.com/zebulonj/redux-resources#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.2",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^3.19.0"
+  },
+  "peerDependencies": {
+    "immutable": "^3.8.1"
+  }
 }
