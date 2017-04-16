@@ -42,3 +42,7 @@ const store = createStore( combineReducers( reducers ), initialState(), applyMid
 ## Immutability
 
 This modules assumes usage of [Immutable](http://facebook.github.io/immutable-js/) in the Redux state.
+
+## Entity Data Structure
+
+This module **requires** that every entity has `id` and `type` properties. It works well with the data structures used in [`json:api`](http://jsonapi.org/).
