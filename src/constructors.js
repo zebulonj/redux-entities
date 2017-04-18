@@ -46,7 +46,7 @@ export function Ignore( base ) {
 }
 
 export function Ident( entity ) {
-  const { id, type } = entity;
+  const { id, type } = Map.isMap( entity ) ? entity.toObject() : entity;
 
   return Map({ type, id });
 }
