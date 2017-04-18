@@ -1,5 +1,6 @@
 export function resolveEntity( state, ident ) {
-  const { type, id } = ident;
+  if ( !ident ) return;
+  const { type, id } = ident.toObject();
 
   return state.getIn( ['$resources', type, id] );
 }

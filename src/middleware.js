@@ -10,7 +10,10 @@ export const middleware = ({ save }) => store => {
     switch ( action.type ) {
       case RESOURCES_SAVE_ENTITY:
         return save( action.entity, dispatch )
-          .then( res => dispatch( setEntity( res ) ) );
+          .then( res => {
+            dispatch( setEntity( res ) );
+            return res;
+          });
       default:
         return next( action );
     }

@@ -4,7 +4,10 @@
   "description": "Abstracted support for managing persistent entities in Redux.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src --out-dir lib",
+    "lint": "eslint src",
+    "test": "npm run -s test:unit",
+    "test:unit": "tape 'lib/**/*.spec.js' | faucet"
   },
   "repository": {
     "type": "git",
@@ -27,7 +30,10 @@
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.2",
     "babel-preset-es2015": "^6.24.1",
-    "eslint": "^3.19.0"
+    "eslint": "^3.19.0",
+    "faucet": "0.0.1",
+    "immutable": "^3.8.1",
+    "tape": "^4.6.3"
   },
   "peerDependencies": {
     "immutable": "^3.8.1"

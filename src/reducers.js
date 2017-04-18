@@ -9,7 +9,7 @@ export function $resources( state = Map(), action ) {
 
   switch ( type ) {
     case RESOURCES_SET_ENTITY:
-      return state.update( entity.type, Map(), resource => resource.set( entity.id, entity ) );
+      return state.update( entity.get( 'type' ), Map(), resource => resource.set( entity.get( 'id' ), entity ) );
     default:
       return state;
   }
