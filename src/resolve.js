@@ -1,11 +1,10 @@
-import get from 'lodash/get';
 import isArray from 'lodash/isArray';
 
-export function resolve( state, idents ) {
-  if ( !idents ) return;
-  if ( isArray( idents ) ) return idents.map( ident => resolve( state, ident ) );
+export function resolve( target, schema, entities ) {
+  if ( !target ) return;
+  if ( isArray( target ) ) return target.map( item => resolve( item, schema[0], entities ) );
 
-  return get( state, ['$entities', idents.type, idents.id] );
+  return schema( target, entities );
 }
 
 export default resolve;
