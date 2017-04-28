@@ -1,5 +1,5 @@
 import {
-  RESOURCES_SAVE_ENTITY,
+  actionTypes,
   setEntity
 } from './actions';
 
@@ -17,7 +17,7 @@ export function middleware( options = {} ) {
 
     return next => action => {
       switch ( action.type ) {
-        case RESOURCES_SAVE_ENTITY:
+        case actionTypes.SAVE:
           return save( action.entity, dispatch )
             .then( res => parse( res ) )
             .then( res => {

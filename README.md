@@ -23,11 +23,11 @@ store.dispatch( saveEntity( todo ) );
 ```
 
 ```js
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { middleware as resourcesMiddleware } from '@zebulonj/redux-entities';
 
 import { thunk } from 'redux-thunk';
-import * as reducers from '@zebulonj/redux-entities/reducers';
+import * as reducers from '@zebulonj/redux-entities/reducer';
 
 const middleware = [
   thunk,
@@ -38,10 +38,6 @@ const middleware = [
 
 const store = createStore( combineReducers( reducers ), initialState(), applyMiddleware( middleware ) );
 ```
-
-## Immutability
-
-This modules assumes usage of [Immutable](http://facebook.github.io/immutable-js/) in the Redux state.
 
 ## Entity Data Structure
 

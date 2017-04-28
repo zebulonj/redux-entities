@@ -1,11 +1,19 @@
-export const RESOURCES_SAVE_ENTITY = 'RESOURCES_SAVE_ENTITY';
-export const RESOURCES_LOAD_ENTITY = 'RESOURCES_LOAD_ENTITY';
+export const actionTypes = createTypes([
+  'SAVE',
+  'LOAD',
+  'SET',
+  'PATCH'
+], 'REDUX_ENTITIES' );
 
-export const RESOURCES_SET_ENTITY = 'RESOURCES_SET_ENTITY';
+export default actionTypes;
+
+function createTypes( arr = [], namespace = '' ) {
+  return arr.reduce( ( acc, item ) => ({ ...acc, [item]: [namespace, item].join( '/' ) }) );
+}
 
 export function saveEntity( entity ) {
   return {
-    type: RESOURCES_SAVE_ENTITY,
+    type: actionTypes.SAVE,
     entity
   }
 }
@@ -16,7 +24,7 @@ export function loadEntity() {
 
 export function setEntity( entity ) {
   return {
-    type: RESOURCES_SET_ENTITY,
+    type: actionTypes.SET,
     entity
   }
 }
