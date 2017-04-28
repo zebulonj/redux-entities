@@ -3,13 +3,13 @@
 ## Installation
 
 ```shell
-npm install --save https://github.com/zebulonj/redux-resources/archive/master.tar.gz
+npm install --save https://github.com/zebulonj/redux-entities/archive/master.tar.gz
 ```
 
 ## Usage
 
 ```js
-import { saveEntity } from '@zebulonj/redux-resources/actions';
+import { saveEntity } from '@zebulonj/redux-entities/actions';
 
 const todo = {
   type: 'todos',
@@ -24,10 +24,10 @@ store.dispatch( saveEntity( todo ) );
 
 ```js
 import { createStore, applyMiddleware } from 'redux';
-import { middleware as resourcesMiddleware } from '@zebulonj/redux-resources';
+import { middleware as resourcesMiddleware } from '@zebulonj/redux-entities';
 
 import { thunk } from 'redux-thunk';
-import * as reducers from '@zebulonj/redux-resources/reducers';
+import * as reducers from '@zebulonj/redux-entities/reducers';
 
 const middleware = [
   thunk,
