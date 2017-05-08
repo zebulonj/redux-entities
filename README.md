@@ -27,7 +27,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { middleware as resourcesMiddleware } from '@zebulonj/redux-entities';
 
 import { thunk } from 'redux-thunk';
-import * as reducers from '@zebulonj/redux-entities/reducer';
+import $entities from '@zebulonj/redux-entities/lib/reducer';
 
 const middleware = [
   thunk,
@@ -36,7 +36,7 @@ const middleware = [
   })
 ]
 
-const store = createStore( combineReducers( reducers ), initialState(), applyMiddleware( middleware ) );
+const store = createStore( combineReducers({ $entities }), initialState(), applyMiddleware( middleware ) );
 ```
 
 ## Entity Data Structure
