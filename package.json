@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
+    "clean": "rm -rf lib",
     "lint": "eslint src",
     "test": "npm run -s test:unit",
     "test:unit": "tape 'lib/**/*.spec.js' | faucet",
