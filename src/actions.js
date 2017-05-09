@@ -28,3 +28,5 @@ export function setEntity( entity ) {
     entity
   }
 }
+
+export const setEntities = entities => dispatch => entities.map( entity => dispatch( setEntity( entity ) ) );
