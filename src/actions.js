@@ -11,15 +11,20 @@ function createTypes( arr = [], namespace = '' ) {
   return arr.reduce( ( acc, item ) => ({ ...acc, [item]: [namespace, item].join( '/' ) }) );
 }
 
-export function saveEntity( entity ) {
+export function saveEntity( entity, schema ) {
   return {
     type: actionTypes.SAVE,
-    entity
+    entity,
+    schema
   }
 }
 
-export function loadEntity() {
-
+export function loadEntity({ type: entityType, id }) {
+  return {
+    type: actionTypes.LOAD,
+    entityType,
+    id
+  }
 }
 
 export function setEntity( entity ) {

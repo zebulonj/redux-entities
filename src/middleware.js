@@ -10,16 +10,15 @@ const defaultOptions = {
 export function middleware( options = {} ) {
   options = Object.assign( {}, defaultOptions, options );
 
-  const { save, parse } = options;
+  const { save } = options;
 
   return store => {
     const { dispatch } = store;
 
-    return next => action => {
+    return next => ( action = {} ) => {
       switch ( action.type ) {
         case actionTypes.SAVE:
-          return save( action.entity, dispatch )
-            .then( res => parse( res ) )
+          return save( action.entity, action.schema, { dispatch })
             .then( res => {
               dispatch( setEntity( res ) );
               return res;
@@ -30,3 +29,5 @@ export function middleware( options = {} ) {
     }
   }
 }
+
+export default middleware;
